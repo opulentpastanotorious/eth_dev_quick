@@ -1,0 +1,95 @@
+{
+    // posts contains only meta info
+    // stored under the posts's unique ID
+    "posts": {
+      "one": {
+        "owner": "0xDA9dfA130Df4dE4673b89022EE50ff26f6EA73Cf",
+        "title": "Historical Tech Pioneers",
+        "dataSize": 1000000,
+        "cid": "bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi",
+        "content": "ghopper: Relay malfunction found. Cause: moth.",
+        "cidType": "CIDv0",
+        "timestamp": 1459361875666,
+        "citations": {"f017..":"ref string" , "20c3":"ref string", ...}
+      },
+      "two": { ... },
+      "three": { ... }
+    },
+  
+    "citations": {
+        "one": {
+            "ref string": {}
+
+        },
+        "two": { ... },
+        "three": { ... }
+    }
+
+    "users": {
+        ""
+    }
+   
+/////////////////////////////////////////////////////////////////////////////
+
+    // Post commenters are easily accessible
+    // and stored by post ID
+    "members": {
+      // we'll talk about indices like this below
+      "one": {
+        "0xDA9dfA130Df4dE4673b89022EE50ff26f6EA73Cf": true,
+        "0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8": true,
+        "0x61EDCDf5bb737ADffE5043706e7C5bb1f1a56eEA": true
+      },
+      "two": { ... },
+      "three": { ... }
+    },
+  
+    // comment are separate from data we may want to iterate quickly
+    // but still easily paginated and queried, and organized by chat
+    // post ID
+    "comment": {
+      "one": {
+        "m1": {
+          "author": "0x61EDCDf5bb737ADffE5043706e7C5bb1f1a56eEA",
+          "message": "The relay seems to be malfunctioning.",
+          "timestamp": 1459361875337
+        },
+        "m2": { ... },
+        "m3": { ... }
+      },
+      "two": { ... },
+      "three": { ... }
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+{   
+    // An index to track 0xDA9's posts
+    "users": {
+      "0xDA9dfA130Df4dE4673b89022EE50ff26f6EA73Cf": {
+        "name": "Ada Lovelace",
+        // Index 0xDA9's groups in her profile
+        "posts": {
+           // the value here doesn't matter, just that the key exists
+           "techpioneers": true,
+           "womentechmakers": true
+        }
+      },
+      ...
+    },
+    "groups": {
+      "techpioneers": {
+        "name": "Historical Tech Pioneers",
+        "members": {
+          "alovelace": true,
+          "ghopper": true,
+          "eclarke": true
+        }
+      },
+      ...
+    }
+  
+}
+
+/////////////////////////////////////////////////////////////////////////////
